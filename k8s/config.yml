@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: backend-config
+data:
+  MONGO_URI: "mongodb://admin:secret@mongo-state-0.mongo.default.svc.cluster.local:27017/todoapp?authSource=admin"
+  GMAIL_USERNAME: "sayi@gmail.com"
+  GMAIL_PASSWORD: "sayi@123"
+  PORT: "8000"
+  JWT_SECRET: "thisisasecretkey"
+
