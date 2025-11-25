@@ -3,7 +3,7 @@ kind: VerticalPodAutoscaler
 metadata:
   name: todo-app-vpa
   annotations:
-    argocd.argoproj.io/sync-wave: "5"
+    argocd.argoproj.io/sync-wave: "6"
 spec:
   targetRef:
     apiVersion: "apps/v1"
