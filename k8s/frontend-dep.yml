@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: todo-frontend
-          image: sairathod/todoapp-frontend:v1
+          image: sairathod/todoapp-frontend:v17
           imagePullPolicy: Always
           ports:
             - containerPort: 80
