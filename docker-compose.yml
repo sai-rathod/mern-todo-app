@@ -1,0 +1,33 @@
+version: '3.8'
+services:
+  frontend:
+    build: ./frontend
+    image: frontend-todo
+    ports:
+      - "127.0.0.1:80:80"
+    volumes:
+      - logs:/var/log/nginx
+    depends_on:
+      - backend
+      - database
+  backend:
+    build: ./backend
+    image: backend-todo
+    ports:
+      - "8000:8000"
+    depends_on:
+      - database
+    env_file:
+      - ./backend/.env
+  database:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - db_logs:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=password
+volumes:
+  logs:
+  db_logs:

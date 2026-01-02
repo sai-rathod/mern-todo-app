@@ -1,6 +1,7 @@
 import axios from "axios"
+
 const instance = axios.create({
-    baseURL: "http://172.23.76.115/api"  // Production (Kubernetes)
-    // baseURL: "http://localhost:8000/api"  // Local development
+    baseURL: process.env.REACT_APP_API_URL || "http://localhost:8000/api"
 })
+
 export default instance
